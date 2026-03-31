@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:25.10
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     opam \
     patch \
     pkg-config \
-    postgresql-16 \
-    postgresql-client-16 \
+    postgresql-17 \
+    postgresql-client-17 \
     zlib1g-dev \
  && rm -rf /var/lib/apt/lists/*
 
@@ -23,7 +23,12 @@ RUN locale-gen en_US.UTF-8
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
-ENV PATH=/usr/lib/postgresql/16/bin:$PATH
+RUN PGVER="$(ls /usr/lib/postgresql | sort -V | tail -1)" \
+ && ln -sf "/usr/lib/postgresql/${PGVER}/bin/initdb" /usr/local/bin/initdb \
+ && ln -sf "/usr/lib/postgresql/${PGVER}/bin/pg_ctl" /usr/local/bin/pg_ctl \
+ && ln -sf "/usr/lib/postgresql/${PGVER}/bin/pg_isready" /usr/local/bin/pg_isready \
+ && ln -sf "/usr/lib/postgresql/${PGVER}/bin/psql" /usr/local/bin/psql
+
 
 RUN useradd -m -s /bin/sh linksuser \
  && mkdir -p /opt/app /opt/postgres-data /opt/scripts \
