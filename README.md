@@ -21,6 +21,12 @@ docker run -d \
   -v tempdb_simple_web_pgdata:/opt/postgres-data \
   vcgalpin/xps_dcc_app:tempdb_simple_web_test
 ```
+and to stop and restart it, use
+```
+docker stop tempdb_simple_web
+docker start tempdb_simple_web
+```
+**Note:** This image does *not* provide the functionality of `run-web.sh`. This functionality can only be accessed when building the image rather than just running the image.
 
 ## What it does
 
