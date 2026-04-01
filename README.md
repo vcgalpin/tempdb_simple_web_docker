@@ -11,9 +11,9 @@ The container includes:
 - PostgreSQL
 - the application code cloned from GitHub at build time
 
-The image is available at https://hub.docker.com/repository/docker/vcgalpin/xps_dcc_app/
+The image created by this setup is available at https://hub.docker.com/repository/docker/vcgalpin/xps_dcc_app/
 
-To run this image, use
+To run this image as a container, use
 ```
 docker run -d \
   --name tempdb_simple_web \
