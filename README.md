@@ -26,7 +26,7 @@ and to stop and restart it, use
 docker stop tempdb_simple_web
 docker start tempdb_simple_web
 ```
-**Note:** This image does *not* provide the functionality of `run-web.sh`. This functionality can only be accessed when building the image rather than just running the image.
+**Note:** This image does *not* provide the functionality of `run-web.sh`. This functionality can only be accessed when building the image from the Dockerfile rather than just running the downloaded image as a container.
 
 ## What it does
 
@@ -38,19 +38,6 @@ When the container starts, it:
 4. loads the SQL dump if the database does not already exist
 5. starts the Links web app
 
-## Important behaviour
-
-### Rebuilds are manual
-When the code changes on GitHub, the user decides whether to rebuild.
-
-The `run-web.sh` script asks:
-
-```text
-Rebuild image from GitHub before starting? [y/N]
-```
-
-- answer `y` to rebuild from GitHub
-- answer `n` to use the existing image/container
 
 ### Database persistence
 The PostgreSQL data is stored in a Docker volume:
@@ -63,20 +50,7 @@ That means:
 
 - rebuilding the image does not automatically delete the database
 - the SQL dump is only loaded the first time the database is created
-
-## Files
-
-This setup uses:
-
-- `Dockerfile`
-- `entrypoint.sh`
-- `run-web.sh`
-
-## Requirements
-
-You need:
-
-- Docker
+  
 
 ## First-time setup
 
@@ -85,7 +59,6 @@ Make the scripts executable:
 ```bash
 chmod +x entrypoint.sh run-web.sh
 ```
-
 
 ## Starting the web app
 
@@ -190,20 +163,12 @@ docker rm -f tempdb_simple_web
 docker volume rm tempdb_simple_web_pgdata
 ```
 
-## Notes
+## Files
 
-### GitHub source
-The application code is cloned from GitHub during the Docker build.
+This setup uses:
 
-### Database settings
-The default settings are:
+- `Dockerfile`
+- `entrypoint.sh`
+- `run-web.sh`
 
-- database: `linksdb`
-- user: `linksuser`
-- password: `change_me`
-
-If you want to change them, edit `run-web.sh`.
-
-### Links executable
-The Links executable is `linx` not `links`.
 
