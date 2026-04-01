@@ -11,6 +11,17 @@ The container includes:
 - PostgreSQL
 - the application code cloned from GitHub at build time
 
+The image is available at https://hub.docker.com/repository/docker/vcgalpin/xps_dcc_app/
+
+To run this image, use
+```
+docker run -d \
+  --name tempdb_simple_web \
+  -p 8080:8080 \
+  -v tempdb_simple_web_pgdata:/opt/postgres-data \
+  vcgalpin/xps_dcc_app:tempdb_simple_web_test
+```
+
 ## What it does
 
 When the container starts, it:
