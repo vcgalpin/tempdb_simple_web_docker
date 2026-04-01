@@ -3,7 +3,7 @@
 
 # tempdb_simple_web
 
-This directory contains a simple Docker setup for running the Links web application in a single container.
+This repo contains a simple Docker setup for running the Links web application in a single container.
 
 The container includes:
 
