@@ -11,22 +11,30 @@ The container includes:
 - PostgreSQL
 - the application code cloned from GitHub at build time
 
-The image created by this setup is available at https://hub.docker.com/repository/docker/vcgalpin/xps_dcc_app/
+There are two different ways to run this container from an image.
+1. **Build the image** yourself on your own computer using the Dockerfile. This is supported by the bash script `run-web-shell.sh` or you can use
+   ```
+     docker build --no-cache \
+    --build-arg APP_REPO_URL="https://github.com/vcgalpin/xps_dcc_app" \
+    --build-arg APP_REPO_BRANCH="main" \
+    -t tempdb-web-shell .
+   ```
+1. **Download the image** and run it. The image created by this setup is available at https://hub.docker.com/repository/docker/vcgalpin/xps_dcc_app/
 
-To run this image as a container, use
-```
-docker run -d \
-  --name tempdb_simple_web \
-  -p 8080:8080 \
-  -v tempdb_simple_web_pgdata:/opt/postgres-data \
-  vcgalpin/xps_dcc_app:tempdb_simple_web_test
-```
-and to stop and restart it, use
-```
-docker stop tempdb_simple_web
-docker start tempdb_simple_web
-```
-**Note:** This image does *not* provide the functionality of `run-web.sh`. This functionality can only be accessed when building the image from the Dockerfile rather than just running the downloaded image as a container.
+   To run this image as a container, use
+   ```
+   docker run -d \
+    --name tempdb_simple_web \
+    -p 8080:8080 \
+    -v tempdb_simple_web_pgdata:/opt/postgres-data \
+    vcgalpin/xps_dcc_app:tempdb_simple_web_test
+   ```
+   and to stop and restart it, use
+   ```
+   docker stop tempdb_simple_web
+   docker start tempdb_simple_web
+   ```
+   **Note:** This image does *not* provide the functionality of `run-web.sh`. This functionality can only be accessed when building the image from the Dockerfile rather than just running    the downloaded image as a container.
 
 ## What it does
 
