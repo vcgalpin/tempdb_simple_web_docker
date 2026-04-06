@@ -22,7 +22,7 @@ There are two different ways to run this container from an image.
       --build-arg APP_REPO_BRANCH="main" \
       -t tempdb-simple-web .
       ```
-    + *or* import a .dockerbuild file into Docker Desktop (more details to follow).
+    Another option is to use the `containers tool` extension in Visual Studio Code: https://code.visualstudio.com/docs/containers/overview
       
 1. **Download the image** and run it. The image created by this setup is available at https://hub.docker.com/repository/docker/vcgalpin/xps_dcc_app/
 
