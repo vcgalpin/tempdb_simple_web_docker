@@ -24,10 +24,15 @@ There are two different ways to run this container from an image.
       ```
     Another option is to use the `containers tool` extension in Visual Studio Code: https://code.visualstudio.com/docs/containers/overview
       
-1. **Download the image** and run it. The image created by this setup is available at https://hub.docker.com/repository/docker/vcgalpin/xps_dcc_app/
+1. **Download the image** and run it. The image created by this setup is available at https://hub.docker.com/repository/docker/vcgalpin/xps_dcc_app/ with tag `tempdb_simple_web_test`.
 
    To run this image as a container,
-      + *either* use 
+      + *either* within Docker Desktop, search in Docker Hub for `xps_dcc_app` and pull the image with tag `tempdb_simple_web_test`.
+        Find the image under images and run it with the following optional settings
+        
+     <img height="500" alt="optional_settings" src="https://github.com/user-attachments/assets/84521935-6e0a-4b64-8663-87f3b6531761" />
+
+      + *or* use 
         ```
         docker run -d \
         --name tempdb_simple_web \
@@ -41,7 +46,7 @@ There are two different ways to run this container from an image.
         docker start tempdb_simple_web
         docker logs -f tempdb_simple_web
         ```
-      + *or* if the image is available in Docker Desktop, it can be run by supplying the appropriate port information and volume information (more details to follow).
+      
    
    (Note: This image does *not* provide the functionality of `run-web.sh`. This functionality can only be accessed when building the image from the Dockerfile rather than just running the downloaded image as a container.)
 
