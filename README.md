@@ -1,7 +1,7 @@
 ## `README.md`
 
 
-# tempdb_simple_web
+# tempdb_simple_web_docker
 
 This repo contains a simple Docker setup for running the [Links temporal DB web application](https://github.com/vcgalpin/xps_dcc_app) as a demo in a single container.
 
