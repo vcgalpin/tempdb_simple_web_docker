@@ -7,7 +7,7 @@ This repo contains a simple Docker setup for running the [Links temporal DB web 
 
 The container includes the Links web app, the application code cloned from GitHub at build time and PostgreSQL.
 
-The container will provide a link to the app at <http://localhost:8080>
+The container provides a link to the app at <http://localhost:8080>
 
 There are two different ways to run this container from an image.
 1. **Build the image** yourself on your own computer using the Dockerfile, 
