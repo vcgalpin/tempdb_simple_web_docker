@@ -3,7 +3,7 @@
 
 # tempdb_simple_web
 
-This repo contains a simple Docker setup for running the [Links temporal DB web application](https://github.com/vcgalpin/xps_dcc_app) in a single container.
+This repo contains a simple Docker setup for running the [Links temporal DB web application](https://github.com/vcgalpin/xps_dcc_app) as a demo in a single container.
 
 The container includes the Links web app, the application code cloned from GitHub at build time and PostgreSQL.
 
