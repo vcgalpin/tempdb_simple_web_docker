@@ -28,9 +28,9 @@ There are two different ways to run this container from an image.
 
    To run this image as a container,
       + *either* within Docker Desktop, search in Docker Hub for `xps_dcc_app` and pull the image with tag `tempdb_simple_web_test`.
-        Find the image under images and run it with the following optional settings
+        Find the image under Images in Docker Desktop and run it with the following settings.
         
-     <img height="500" alt="optional_settings" src="https://github.com/user-attachments/assets/84521935-6e0a-4b64-8663-87f3b6531761" />
+        <img height="450" alt="optional_settings" src="https://github.com/user-attachments/assets/84521935-6e0a-4b64-8663-87f3b6531761" />
 
       + *or* use 
         ```
