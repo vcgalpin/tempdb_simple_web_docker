@@ -40,10 +40,7 @@ There are two different ways to run this container from an image.
       ```
     + *or* use the following command
       ```
-      docker build --no-cache \
-      --build-arg APP_REPO_URL="https://github.com/vcgalpin/xps_dcc_app" \
-      --build-arg APP_REPO_BRANCH="main" \
-      -t tempdb_simple_web .
+      docker build --no-cache -t tempdb_simple_web .
       ```
       followed by
       ```
