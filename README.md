@@ -10,20 +10,6 @@ The container includes the Links web app, the application code cloned from GitHu
 The container provides a link to the app at <http://localhost:8080>
 
 There are two different ways to run this container from an image.
-1. **Build the image** yourself on your own computer using the Dockerfile, 
-    + *either* run the bash script - [more details on what the script does](#running-the-bash-script)
-      ```
-      ./run-web.sh
-      ```
-    + *or* use the following command
-      ```
-      docker build --no-cache \
-      --build-arg APP_REPO_URL="https://github.com/vcgalpin/xps_dcc_app" \
-      --build-arg APP_REPO_BRANCH="main" \
-      -t tempdb-simple-web .
-      ```
-    Another option is to use the `containers tool` extension in Visual Studio Code: https://code.visualstudio.com/docs/containers/overview
-      
 1. **Download the image** and run it. The image created by this setup is available at https://hub.docker.com/repository/docker/vcgalpin/xps_dcc_app/ with tag `tempdb_simple_web_test`.
 
    To run this image as a container,
@@ -46,9 +32,22 @@ There are two different ways to run this container from an image.
         docker start tempdb_simple_web
         docker logs -f tempdb_simple_web
         ```
-      
-   
    (Note: This image does *not* provide the functionality of `run-web.sh`. This functionality can only be accessed when building the image from the Dockerfile rather than just running the downloaded image as a container.)
+1. **Build the image** yourself on your own computer using the Dockerfile, 
+    + *either* run the bash script - [more details on what the script does](#running-the-bash-script)
+      ```
+      ./run-web.sh
+      ```
+    + *or* use the following command
+      ```
+      docker build --no-cache \
+      --build-arg APP_REPO_URL="https://github.com/vcgalpin/xps_dcc_app" \
+      --build-arg APP_REPO_BRANCH="main" \
+      -t tempdb-simple-web .
+      ```
+    Another option is to use the `containers tool` extension in Visual Studio Code: https://code.visualstudio.com/docs/containers/overview
+      
+
 
 ## What the container does
 
