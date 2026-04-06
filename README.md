@@ -43,7 +43,15 @@ There are two different ways to run this container from an image.
       docker build --no-cache \
       --build-arg APP_REPO_URL="https://github.com/vcgalpin/xps_dcc_app" \
       --build-arg APP_REPO_BRANCH="main" \
-      -t tempdb-simple-web .
+      -t tempdb_simple_web .
+      ```
+      followed by
+      ```
+      docker run -d \
+      --name tempdb_simple_web \
+      -p 8080:8080 \
+      -v tempdb_simple_web_pgdata:/opt/postgres-data \
+      tempdb_simple_web:latest
       ```
     Another option is to use the `containers tool` extension in Visual Studio Code: https://code.visualstudio.com/docs/containers/overview
       
